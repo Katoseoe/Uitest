@@ -1455,38 +1455,6 @@ end
 return Feat,name,Tab,Text,Inside
 end
 
-function Utility:AddRealTimeClock()
-    local Frame = Instance.new("Frame")
-    Frame.Size = UDim2.new(0, 200, 0, 50)
-    Frame.Position = UDim2.new(0.5, -100, 0, 30)
-    Frame.BackgroundColor3 = Color3.new(0, 0, 0)
-    Frame.BackgroundTransparency = 0.5
-
-    local TextLabel = Instance.new("TextLabel")
-    TextLabel.Size = UDim2.new(1, 0, 1, 0)
-    TextLabel.BackgroundTransparency = 1
-    TextLabel.TextColor3 = Color3.new(1, 1, 1)
-    TextLabel.TextSize = 20
-    TextLabel.Font = Enum.Font.SourceSansBold
-    TextLabel.Parent = Frame
-
-    local function updateTime()
-        local currentTime = os.date("%I:%M:%S %p")
-        TextLabel.Text = currentTime
-    end
-
-    local ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.ResetOnSpawn = false
-    ScreenGui.Parent = game:GetService("StarterGui")
-
-    Frame.Parent = ScreenGui
-
-    while true do
-        updateTime()
-        wait(1)
-    end
-end
-
 local More = Instance.new("ImageLabel")
 local MoreVis = More
 More.Visible = false
